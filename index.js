@@ -6,7 +6,7 @@ const ulEl = document.getElementById("ul-el")
 function renderItems() {
     let listItems = ""
     for (let i = 0; i < myReads.length; i++) {
-    listItems += "<li>" + "<a href='" + myReads[i] + "' target='_blank'>" + myReads[i] + "</a>" + "</li>";
+    listItems += `<li><a href="${myReads[i]}" target="_blank">${myReads[i]}</a></li>`;
     ulEl.innerHTML = listItems;
 }
 }
