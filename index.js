@@ -1,17 +1,19 @@
-let myReadlys = []
+let myReads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
-const myReadlyList = document.getElementById("my-reads")
+const ulEl = document.getElementById("ul-el")
+
+function renderItems() {
+    let listItems = ""
+    for (let i = 0; i < myReads.length; i++) {
+    listItems += "<li>" + myReads[i] + "</li>";
+    ulEl.innerHTML = listItems;
+}
+}
 
 inputBtn.addEventListener("click", function() {
     let currentURL = window.location.href;
-    myReadlys.push(currentURL)
-    console.log(myReadlys)
+    myReads.push(currentURL)
+    renderItems()
+    console.log(myReads)
 })
-
-
-// myReads
-
-for (let i = 0; i < myReadlys.length; i++) {
-    myReadlyList.textContent(myReadlys[i])
-}
