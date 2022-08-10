@@ -6,13 +6,14 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const clearAllBtn = document.getElementById("clear-all-btn")
 const ulEl = document.getElementById("ul-el")
+const readsFromLocalStorage = JSON.parse( localStorage.getItem("myReads") )
 
-let readsFromLocalStorage = JSON.parse( localStorage.getItem("myReads") )
 
 if (readsFromLocalStorage) {
     myReads = readsFromLocalStorage
     renderItems()
 }
+
 
 // Function
 
