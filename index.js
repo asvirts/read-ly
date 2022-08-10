@@ -9,11 +9,19 @@ const ulEl = document.getElementById("ul-el")
 const readsFromLocalStorage = JSON.parse( localStorage.getItem("myReads") )
 
 
+chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url;
+    // use `url` here inside the callback because it's asynchronous!
+});
+
 if (readsFromLocalStorage) {
     myReads = readsFromLocalStorage
     renderItems()
 }
 
+const tabs = [
+    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+]
 
 // Function
 
@@ -25,15 +33,19 @@ function renderItems() {
 }
 }
 
-
 // Buttons
 
 inputBtn.addEventListener("click", function() {
-    let currentURL = window.location.href;
-    myReads.push(currentURL)
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+
+        let activeTab = tabs[0]
+        let activeTabId = activeTab.id
+
+    });
+
+    myReads.push(tabs[0].url)
     localStorage.setItem("myReads", JSON.stringify(myReads) )
-    renderItems()
-    console.log(myReads)
+    renderItems(myReads)
 })
 
 clearAllBtn.addEventListener("click", function() {

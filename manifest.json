@@ -1,5 +1,5 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
   
     "name": "read.ly",
     "description": "Chrome extension that bookmarks pages you want to read later more efficiently than other extensions",
@@ -10,6 +10,7 @@
       "default_popup": "index.html"
     },
     "permissions": [
+      "tabs",
       "activeTab",
       "https://ajax.googleapis.com/"
     ]
