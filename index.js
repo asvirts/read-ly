@@ -1,7 +1,16 @@
+// Values
+
 let myReads = []
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
+const clearAllBtn = document.getElementById("clear-all-btn")
 const ulEl = document.getElementById("ul-el")
+
+localStorage.setItem("myReads", )
+
+
+// Function
 
 function renderItems() {
     let listItems = ""
@@ -11,9 +20,17 @@ function renderItems() {
 }
 }
 
+
+// Buttons
+
 inputBtn.addEventListener("click", function() {
     let currentURL = window.location.href;
     myReads.push(currentURL)
     renderItems()
+    console.log(myReads)
+})
+
+clearAllBtn.addEventListener("click", function() {
+    localStorage.clear()
     console.log(myReads)
 })
