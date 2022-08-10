@@ -19,9 +19,6 @@ if (readsFromLocalStorage) {
     renderItems()
 }
 
-const tabs = [
-    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
-]
 
 // Function
 
@@ -35,17 +32,13 @@ function renderItems() {
 
 // Buttons
 
-inputBtn.addEventListener("click", function() {
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+inputBtn.addEventListener("click", function(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myReads.push(tabs[0].url)
+        localStorage.setItem("myReads", JSON.stringify(myReads) )
+        renderItems(myReads)
+    })
 
-        let activeTab = tabs[0]
-        let activeTabId = activeTab.id
-
-    });
-
-    myReads.push(tabs[0].url)
-    localStorage.setItem("myReads", JSON.stringify(myReads) )
-    renderItems(myReads)
 })
 
 clearAllBtn.addEventListener("click", function() {
