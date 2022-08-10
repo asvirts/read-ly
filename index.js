@@ -4,7 +4,7 @@ let myReads = []
 
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
-const clearAllBtn = document.getElementById("clear-all-btn")
+const clearAllBtn = document.getElementById("clear-all")
 const ulEl = document.getElementById("ul-el")
 const readsFromLocalStorage = JSON.parse( localStorage.getItem("myReads") )
 
@@ -38,5 +38,6 @@ inputBtn.addEventListener("click", function() {
 
 clearAllBtn.addEventListener("click", function() {
     localStorage.clear()
-    console.log(myReads)
+    myReads = []
+    renderItems()
 })
