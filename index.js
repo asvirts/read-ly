@@ -24,7 +24,6 @@ function renderItems() {
 inputBtn.addEventListener("click", function() {
     let currentURL = window.location.href;
     myReads.push(currentURL)
-    localStorage.setItem(currentURL)
     renderItems()
     console.log(myReads)
 })
