@@ -1,5 +1,4 @@
 body {
-    margin: 2%;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,8 +15,13 @@ button {
     background: #5f9341;
     color: white;
     padding: 10px 20px;
+    margin-left: 10px;
     border: none;
     font-weight: bold;
+}
+
+.buttons {
+    margin: 20px;
 }
 
 ul {
